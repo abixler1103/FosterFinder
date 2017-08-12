@@ -1,0 +1,46 @@
+#navbar {
+	background-color: teal !important;
+}
+
+#donate {
+	background-color: teal;
+	color: coral;
+}
+
+#footer {
+	background-color: teal !important;
+}
+
+#profile {
+	background-color: teal;
+	border-color: teal;
+	color: coral;
+}
+
+h4 {
+	color: coral;
+}
+
+#navlinks {
+	color: coral;
+}
+
+#navbarDropdownBlog {
+	color: coral;
+}
+
+#dogname {
+	color: coral;
+}
+
+#dot {
+	color: coral;
+}
+
+#copyright {
+	color: coral !important;
+}
+
+#name {
+	color: coral;
+}

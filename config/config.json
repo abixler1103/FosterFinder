@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Froggy34",
-    "database": "fosterFinder_db",
+    "password": "Bubbles.7",
+    "database": "fosterFinder",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -14,10 +14,12 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "smufosterfinder@fosterfinder",
+    "password": "SMUcode1234",
+    "database": "fosterFinder",
+    "host": "fosterfinder.mysql.database.azure.com",
+    "dialect": "mysql",
+    "port": 3306,
+    "ssl":true
   }
 }

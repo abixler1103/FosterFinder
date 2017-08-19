@@ -11,7 +11,8 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,7 +46,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navlinks">More Info
                         </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="public/startbootstrap-modern-business-gh-pages/ull-width.html">Terms & Conditins</a>
+                        <a class="dropdown-item" href="public/startbootstrap-modern-business-gh-pages/ull-width.html">Terms & Conditions</a>
                         <a class="dropdown-item" href="public/startbootstrap-modern-business-gh-pages/sidebar.html">FAQ</a>
                         <a class="dropdown-item" href="public/startbootstrap-modern-business-gh-pages/faq.html">Donate</a>
                     </div>
@@ -56,64 +57,72 @@
     <!-- Page Content -->
     <br>
     <br>
-        <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
-
-      <form class="form-vertical" role="form">
-        <fieldset>
-          <legend>Foster Application</legend>
-
-          <div class="form-group">
-            <label for="input-text" class="control-label">First Name</label>
-            <input type="text" class="form-control" id="input-text" placeholder="ex. John">
-          </div>
-          <div class="form-group">
-            <label for="input-text" class="control-label">Last Name:</label>
-            <input type="text" class="form-control mask-date" id="input-date" placeholder="ex. Doe">
-          </div>
-          <div class="form-group">
-            <label for="input-email" class="control-label">Email:</label>
-            <input type="text" class="form-control mask-money" id="input-money" placeholder="ex johndoe@gmail.com">
-          </div>
-          <div class="form-group">
-            <label for="phone" class="control-label">Phone Number:</label>
-            <input type="text" class="form-control" id="address" placeholder="214-555-5555">
-          </div>
-
-          <div class="form-group">
-            <label for="input-text" class="control-label">Breed and Temperment:</label>
-            <textarea type="text" class="form-control" id="input-text" placeholder="..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="job" class="control-label">Special dietary needs?</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="designer" checked="checked" />
-                <span>Yes</span>
-              </label>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
+                <form class="form-vertical" role="form">
+                    <fieldset>
+                        <legend>Dog Profile</legend><br><b
+                        <div class="form-group">
+                            <label for="input-img" class="control-label"></label>
+                            <input type="file" id="img" name="input-img">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-name" class="control-label">Name:</label>
+                            <input type="text" class="form-control" id="input-name" placeholder="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-breed" class="control-label">Breed:</label>
+                            <input type="text" class="form-control mask-date" id="breed" placeholder="breed">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-age" class="control-label">Age:</label>
+                            <input type="text" class="form-control mask-money" id="age" placeholder="age">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-gender" class="control-label">Gender:</label>
+                            <input type="text" class="form-control" id="gender" placeholder="gender">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-discription" class="control-label">Description:</label>
+                            <textarea type="text" class="form-control" id="description" placeholder="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-location" class="control-label">location:</label>
+                            <textarea type="text" class="form-control" id="location" placeholder="location"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="frontend" />
-                <span>No</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </fieldset>
-
-        
-
-
-      </form>
+        </div>
     </div>
-  </div>
-</div>
+    <script>
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        var dog = {
+            photo: $("#img").val(),
+            name: $("#input-name").val(),
+            breed: $("#breed").val(),
+            age: $("#age").val(),
+            gender: $("#gender").val(),
+            description: $("#description").val(),
+            location: $("#location").val()
+        }
+        console.log(dog);
+    });
+    </script>
 </body>
 
 </html>
+
+<!-- var name = req.body.name,
+       photo =  req.body.photo,
+       description = req.body.description,
+       location = req.body.location,
+       age = req.body.age,
+       breed = req.body.breed,
+       gender = req.body.gender; -->

@@ -11,7 +11,10 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+     <!-- Latest compiled and minified CSS & JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -65,113 +68,114 @@
           <legend>Foster Questionaire</legend>
 
           <div class="form-group">
-            <label for="input-text" class="control-label">First Name</label>
-            <input type="text" class="form-control" id="input-text" placeholder="ex. John">
+            <label for="input-first" class="control-label">First Name</label>
+            <input  class="form-control" id="first-name" name="input-first" placeholder="ex. John">
           </div>
           <div class="form-group">
-            <label for="input-text" class="control-label">Last Name:</label>
-            <input type="text" class="form-control mask-date" id="input-date" placeholder="ex. Doe">
+            <label for="input-last" class="control-label">Last Name:</label>
+            <input type="text" class="form-control mask-date" id="last-name" name="input-last" placeholder="ex. Doe">
           </div>
           <div class="form-group">
             <label for="input-email" class="control-label">Email:</label>
-            <input type="text" class="form-control mask-money" id="input-money" placeholder="ex johndoe@gmail.com">
+            <input type="text" class="form-control mask-money" id="email" name="input-email" placeholder="ex johndoe@gmail.com">
           </div>
           <div class="form-group">
-            <label for="phone" class="control-label">Phone Number:</label>
-            <input type="text" class="form-control" id="address" placeholder="214-555-5555">
+            <label for="input-phone" class="control-label">Phone Number:</label>
+            <input type="text" class="form-control" id="phone" name="input-phone" placeholder="214-555-5555">
           </div>
+
           <div class="form-group">
-            <label for="input-select" class="control-label">Type of Home:</label>
-            <select class="form-control" id="input-select">
+            <label for="input-home" class="control-label">Type of Home:</label>
+            <select class="form-control" id="home-type" name="input-home">
               <option value="">Select</option>
-              <option value="1">Apartment</option>
-              <option value="2">Townhouse</option>
-              <option value="3">Duplex</option>
-              <option value="3">Single Family</option>
+              <option value="apartment">Apartment</option>
+              <option value="townhouse">Townhouse</option>
+              <option value="duplex">Duplex</option>
+              <option value="single family">Single Family</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="job" class="control-label">Fenced Yard?</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="designer" checked="checked" />
-                <span>Yes</span>
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="frontend" />
-                <span>No</span>
-              </label>
-            </div>
+            <label for="input-yard" class="control-label">Fenced Yard?</label>
+            <select class="form-control" id="yard" name="input-yard">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
           </div>
 
           <div class="form-group">
-            <label for="job" class="control-label">Anyone under 18 yrs of age living in the home?</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="designer" checked="checked" />
-                <span>Yes</span>
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="frontend" />
-                <span>No</span>
-              </label>
-            </div>
+            <label for="input-kids" class="control-label">Anyone under 18 yrs of age living in the home?</label>
+            <select class="form-control" id="kids" name="input-kids">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
           </div>
 
           <div class="form-group">
-            <label for="job" class="control-label">Do you currently have any pets?</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="designer" checked="checked" />
-                <span>Yes</span>
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="frontend" />
-                <span>No</span>
-              </label>
-            </div>
+            <label for="input-pets" class="control-label">Do you currently have pets?</label>
+            <select class="form-control" id="pets" name="input-pets">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
           </div>
 
           <div class="form-group">
-            <label for="job" class="control-label">Type:</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="designer" checked="checked" />
-                <span>Dog</span>
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="job" value="frontend" />
-                <span>Cat</span>
-              </label>
-            </div>
+            <label for="input-pet-type" class="control-label">Pet type?</label>
+            <select class="form-control" id="pet-type" name="input-pet-type">
+              <option value="">Select</option>
+              <option value="yes">Dog</option>
+              <option value="no">Cat</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
           <div class="form-group">
             <label for="input-text" class="control-label">Breed and Temperment:</label>
-            <textarea type="text" class="form-control" id="input-text" placeholder="..."></textarea>
-          </div>
+            <textarea type="text" class="form-control" id="textbox" placeholder="..."></textarea>
+          </div> 
 
           <div class="form-group">
             <button type="submit" class="btn btn-primary" id="profile">Submit</button>
           </div>
         </fieldset>
-
-        
-
-
       </form>
     </div>
   </div>
 </div>
+
+<script>
+
+  $("#profile").on("click", function(event) {
+    event.preventDefault();
+
+    var userProfile = {
+      first_name: $("#first-name").val(),
+      last_name: $("#last-name").val(),
+      email: $("#email").val(),
+      phone: $("#phone").val(),
+      home_type: $("#home-type").val(),
+      yard_type: $("#yard").val(),
+      kids: $("#kids").val(),
+      pets: $("#pets").val(),
+      pet_type: $("#pet-type").val(),
+      text: $("#textbox").val()
+    }
+
+    console.log(userProfile);
+
+
+    //post route to mysql
+    // $.post("/api/user/", userProfile, function(data){
+    //   console.log("User added");
+    // });
+
+  });
+
+</script>
+
 </body>
 
 </html>

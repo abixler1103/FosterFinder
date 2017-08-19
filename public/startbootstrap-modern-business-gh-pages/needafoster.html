@@ -62,14 +62,15 @@
             <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
                 <form class="form-vertical" role="form">
                     <fieldset>
-                        <legend>Dog Profile</legend><br><b
-                        <div class="form-group">
-                            <label for="input-img" class="control-label"></label>
-                            <input type="file" id="img" name="input-img">
-                        </div>
+                        <legend>Dog Profile</legend><br><br>
+                       
                         <div class="form-group">
                             <label for="input-name" class="control-label">Name:</label>
                             <input type="text" class="form-control" id="input-name" placeholder="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-name" class="control-label">Link to photo image (Required):</label>
+                            <input type="text" class="form-control" id="photo-link" placeholder="photo image link">
                         </div>
                         <div class="form-group">
                             <label for="input-breed" class="control-label">Breed:</label>
@@ -104,8 +105,8 @@
         event.preventDefault();
 
         var dog = {
-            photo: $("#img").val(),
             name: $("#input-name").val(),
+            photo_link: $("#photo-link"),
             breed: $("#breed").val(),
             age: $("#age").val(),
             gender: $("#gender").val(),

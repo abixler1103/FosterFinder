@@ -1,8 +1,11 @@
 var express = require("express");
+var cors = require("cors");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 
 var app = express();
+app.use(cors());
+app.options("*",cors());
 var PORT = process.env.PORT || 8080;
 
 var db = require("./models");

@@ -2,11 +2,11 @@
 var db = require('../models');
 var Foster = db.Foster;
 
+
 // export the routes
 module.exports = function(app) {
     // get the root route
-
-    app.get('/api/foster', function(request, response) {
+    app.get('/api/foster', function(req, res) {
         db.Foster.findAll({}).then(function (dbfoster) {
             var responseObj = {
                 foster: dbFoster
@@ -15,7 +15,7 @@ module.exports = function(app) {
         res.json(responseObj);
     });
     
-    app.get('/api/foster', function(request, response) {
+    app.get('/api/foster', function(req, res) {
         db.Foster.findOne({
             where: {
                 id: req.params.id

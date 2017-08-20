@@ -8,11 +8,11 @@ module.exports = function(app) {
     // get the root route
     app.get('/api/foster', function(req, res) {
         db.Foster.findAll({}).then(function (dbfoster) {
-            var hbsObject = {
+            var responseObj = {
                 foster: dbFoster
             }
         })
-        res.render('index', hbsObject);
+        res.json(responseObj);
     });
     
     app.get('/api/foster', function(req, res) {

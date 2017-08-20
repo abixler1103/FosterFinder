@@ -36,6 +36,7 @@ module.exports = function (app) {
     });
 
     app.post("/api/dogs", function (req, res) {
+        console.log(req.body);
         db.Dogs.create({
             dog_name: req.body.name,
             dog_photo: req.body.photo,

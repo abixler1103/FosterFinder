@@ -154,22 +154,36 @@
   $("#profile").on("click", function(event) {
     event.preventDefault();
 
-    var userProfile = {
-      first_name: $("#first-name").val(),
-      last_name: $("#last-name").val(),
+// var dog = {
+//       firstname: "John",
+//       lastname: "Doe",
+//       social_link:"http://www.facebook.com/jdoe",
+//       email: "jdoe@gmail.com",
+//       phone: "2145555555",
+//       hometype: "apartment",
+//       yardtype: "yes",
+//       kids: "No",
+//       pets: "Yes",
+//       pettype: "Dog",
+//       text: "He's the best!"
+//     }
+
+    var dog = {
+      firstname: $("#first-name").val(),
+      lastname: $("#last-name").val(),
       social_link:$("#social-link").val(),
       email: $("#email").val(),
       phone: $("#phone").val(),
-      home_type: $("#home-type").val(),
-      yard_type: $("#yard").val(),
+      hometype: $("#home-type").val(),
+      yardtype: $("#yard").val(),
       kids: $("#kids").val(),
       pets: $("#pets").val(),
-      pet_type: $("#pet-type").val(),
+      pettype: $("#pet-type").val(),
       text: $("#textbox").val()
     }
-
-    console.log(userProfile);
-
+    
+    $.post('http://localhost:8080/api/foster', dog);
+    
 
     //post route to mysql
     // $.post("/api/user/", userProfile, function(data){

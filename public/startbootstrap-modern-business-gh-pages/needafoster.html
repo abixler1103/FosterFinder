@@ -106,24 +106,18 @@
 
         var dog = {
             name: $("#input-name").val(),
-            photo_link: $("#photo-link"),
+            photo: $("#photo-link").val(),
             breed: $("#breed").val(),
             age: $("#age").val(),
             gender: $("#gender").val(),
             description: $("#description").val(),
             location: $("#location").val()
         }
-        console.log(dog);
+
+        $.post('http://localhost:8080/api/dogs', dog);
     });
     </script>
 </body>
 
 </html>
 
-<!-- var name = req.body.name,
-       photo =  req.body.photo,
-       description = req.body.description,
-       location = req.body.location,
-       age = req.body.age,
-       breed = req.body.breed,
-       gender = req.body.gender; -->

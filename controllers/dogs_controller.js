@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-
+//not sure if this is working.. Having some issues with it
     app.get("/api/dogs", function (req, res) {
         db.Dogs.findAll({}).then(function (dbDogs) {
             var responseObject = {

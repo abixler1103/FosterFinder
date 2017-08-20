@@ -5,13 +5,14 @@ var Foster = db.Foster;
 // export the routes
 module.exports = function(app) {
     // get the root route
+
     app.get('/api/foster', function(request, response) {
         db.Foster.findAll({}).then(function (dbfoster) {
-            var hbsObject = {
+            var responseObj = {
                 foster: dbFoster
             }
         })
-        res.render('index', hbsObject);
+        res.json(responseObj);
     });
     
     app.get('/api/foster', function(request, response) {

@@ -19,6 +19,7 @@ app.use(methodOverride("_method"));
 
 require("./controllers/dogs_controller.js")(app);
 require("./controllers/foster_controller.js")(app);
+// require("./controllers/UI_controllers.js")(app);
 
 db.sequelize.sync().then(function(){
 	app.listen(PORT, function(){

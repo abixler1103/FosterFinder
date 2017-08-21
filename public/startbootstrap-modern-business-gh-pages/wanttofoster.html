@@ -154,21 +154,8 @@
   $("#profile").on("click", function(event) {
     event.preventDefault();
 
-// var dog = {
-//       firstname: "John",
-//       lastname: "Doe",
-//       social_link:"http://www.facebook.com/jdoe",
-//       email: "jdoe@gmail.com",
-//       phone: "2145555555",
-//       hometype: "apartment",
-//       yardtype: "yes",
-//       kids: "No",
-//       pets: "Yes",
-//       pettype: "Dog",
-//       text: "He's the best!"
-//     }
 
-    var dog = {
+    var foster = {
       firstname: $("#first-name").val(),
       lastname: $("#last-name").val(),
       social_link:$("#social-link").val(),
@@ -182,7 +169,7 @@
       text: $("#textbox").val()
     }
     
-    $.post('http://localhost:8080/api/foster', dog);
+    $.post('http://localhost:8080/api/foster', foster);
     
 
     //post route to mysql

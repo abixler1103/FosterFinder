@@ -7,13 +7,13 @@ var Foster = db.Foster;
 module.exports = function(app) {
     // get the root route
     app.get('/api/foster', function(req, res) {
-        db.Foster.findAll({}).then(function (dbfoster) {
-            var responseObj = {
+        db.Foster.findAll({}).then(function (dbFoster) {
+            var responseObject = {
                 foster: dbFoster
             }
-        })
-        res.json(responseObj);
+            res.json(responseObject);
     });
+});
     
     app.get('/api/foster', function(req, res) {
         db.Foster.findOne({
@@ -42,6 +42,7 @@ module.exports = function(app) {
     app.post("/api/foster", function (req, res) {
         db.Foster.create({
             foster_firstname: req.body.firstname,
+            // foster_photo: req.body.photo,
             foster_lastname: req.body.lastname,
             foster_email: req.body.email,
             foster_phone: req.body.phone,

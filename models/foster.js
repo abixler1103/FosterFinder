@@ -16,6 +16,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             validate: { len: [1, 140] }
         },
+        // foster_photo: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
         foster_phone: {
             type: DataTypes.INTEGER,
             allowNull: false,

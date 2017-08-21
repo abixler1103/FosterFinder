@@ -1,7 +1,7 @@
 {
-  "production": {
+  "development": {
     "username": "root",
-    "password": "8012dev",
+    "password": "Bubbles.7",
     "database": "fosterFinder",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -13,7 +13,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "development": {
+  "production": {
     "username": "smufosterfinder@fosterfinder",
     "password": "SMUcode1234",
     "database": "fosterFinder",

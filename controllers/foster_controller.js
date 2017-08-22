@@ -42,7 +42,7 @@ module.exports = function(app) {
     app.post("/api/foster", function (req, res) {
         db.Foster.create({
             foster_firstname: req.body.firstname,
-            // foster_photo: req.body.photo,
+            foster_photo: req.body.imageLink,
             foster_lastname: req.body.lastname,
             foster_email: req.body.email,
             foster_phone: req.body.phone,

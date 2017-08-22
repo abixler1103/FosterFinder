@@ -41,6 +41,9 @@
                     <a class="nav-link" href="./dogs/html" id="navlinks">Dogs</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="./fosters/html" id="navlinks">Fosters</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#" id="navlinks">Stories</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -59,102 +62,45 @@
     <!-- Page Content -->
     <div class="container">
 
-        <header><h1>Foster One of These Fur-Babies!</h1></header>
+        <header>
+            <h1>Foster One of These Fur-Babies!</h1>
+        </header>
 
         <main>
 
             <div class="gallery" id="gallery">
-                <div class="gallery__wrapper">
-
-
-
-
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img class="gallery__image" id="dog_photo" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="dog_name">Polly</h2>
-                        <img id="dog_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
+                <div id="galleryItems" class="gallery__wrapper">
 
                 </div>
             </div>
         </main>
 
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="dogName"><strong></strong></h2>
-                        </div>
-                        <div class="modal-body">
-                            <img id="dogImg" src="" alt="">
-                            <p id="dogDescription"></p>
-                            <p id="dogLocation"></p>
-                            <p id="dogBreed"></p>
-                            <p id="dogAge"></p>
-                        </div>
-                        <button type="button" class="btn btn-default" id="fosterButton" onclick="window.open('email.html')">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="dogName"><strong></strong></h2>
+                    </div>
+                    <div class="modal-body">
+                        <img id="dogImg" src="" alt="">
+                        <p id="dogDescription"></p>
+                        <p id="dogLocation"></p>
+                        <p id="dogBreed"></p>
+                        <p id="dogAge"></p>
+                    </div>
+                    <button type="button" class="btn btn-default" id="fosterButton" onclick="window.open('email.html')">
                                 <span class="glyphicon glyphicon-heart-empty"></span> I Want To Foster!
                               </button>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
+
+
+
+    </div>
     </div>
     <!-- /.container -->
     <!-- Footer -->
@@ -171,27 +117,31 @@
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $.get("/api/dogs", function(data) {
-    $("#dog_name").html(data.dogs[0].dog_name);
-    $("#dog_photo").attr("src", data.dogs[0].dog_photo);
+        $(document).ready(function () {
+            $.get("/api/dogs", function (data) {
+                var galleryItemsHtml = "";
+                for (i = 0; i < data.dogs.length; i++) {
+                    galleryItemsHtml = galleryItemsHtml + "<div class='gallery__item'><h2 class='gallery__title' id='dog_name'>" + data.dogs[i].dog_name + "</h2><a class='open-dog' data-toggle='modal' data-id='" + data.dogs[i].id + "'><img id='dog_photo' class='gallery__image' src='" + data.dogs[i].dog_photo + "' /></a></div>";
+                }
+                $("#galleryItems").html(galleryItemsHtml);
+            });
+        });
 
-    })
-$("#gallery").on("click", function(e) {
-    e.preventDefault();
-    $.get("/api/dogs", function(data) {
-        console.log(data);
-    $("#dog_name").html(data.dogs[0].dog_name);
-    $("#dog_photo").html(data.dogs[0].dog_photo);
-    $("#dogName").html(data.dogs[0].dog_name);
-    $("#dogImg").attr("src", data.dogs[0].dog_photo);
-    $("#dogDescription").html("Description: " + data.dogs[0].dog_description);
-    $("#dogLocation").html("Location: " + data.dogs[0].dog_location);
-    $("#dogBreed").html("Breed: " + data.dogs[0].dog_breed);
-    $("#dogAge").html("Age: " + data.dogs[0].dog_age);
-    console.log("2");
-    $("#myModal").modal("toggle");
-});
-});
+        $(document).on("click", ".open-dog", function () {
+            var dogId = $(this).data('id');
+            console.log(dogId);
+
+            $.get("/api/dogs/" + dogId, function (data) {
+                $("#dogName").html(data.dog_name);
+                $("#dogImg").attr("src", data.dog_photo);
+                $("#dogDescription").html("Description: " + data.dog_description);
+                $("#dogLocation").html("Location: " + data.dog_location);
+                $("#dogBreed").html("Breed: " + data.dog_breed);
+                $("#dogAge").html("Age: " + data.dog_age);
+                console.log("2");
+                $("#myModal").modal("show");
+            });
+        });
     </script>
 </body>
 

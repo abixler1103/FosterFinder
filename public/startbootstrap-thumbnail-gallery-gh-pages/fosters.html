@@ -125,7 +125,7 @@ $(document).ready(function () {
 
             $.get("/api/foster/" + fosterId, function (data) {
                 $("#fosterFirstName").html(data.foster_firstname);
-                $("fosterImg").attr("src", data.foster_photo);
+                $("#fosterImg").attr("src", data.foster_photo);
                 $("#fosterEmail").html("Email: " + data.foster_email);
                 $("#fosterPhone").html("Phone Number: " + data.foster_phone);
                 $("#fosterHomeType").html("Home Type: " + data.foster_hometype);

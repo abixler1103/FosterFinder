@@ -2,7 +2,7 @@
     "development":
     {
         "username": "root",
-        "password": "Froggy34",
+        "password": "Bubbles.7",
         "database": "fosterfinder",
         "host": "127.0.0.1",
         "dialect": "mysql"

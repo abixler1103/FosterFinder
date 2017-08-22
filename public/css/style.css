@@ -1,47 +1,63 @@
+body {
+    background-color: #dfd0bf;
+}
+
 #navbar {
-	background-color: teal !important;
+    background-color: #8cc5aa !important;
 }
 
 #donate {
-	background-color: teal;
-	color: coral;
+    background-color: #8cc5aa;
+    color: #8459ab;
 }
 
 #footer {
-	background-color: teal !important;
+    background-color: #8cc5aa !important;
 }
 
 #profile {
-	background-color: teal;
-	border-color: teal;
-	color: coral;
+    background-color: #8cc5aa;
+    border-color: #8cc5aa;
+    color: #8459ab;
 }
 
 h4 {
-	color: coral;
+    color: #8459ab;
 }
 
 #navlinks {
-	color: coral;
+    color: #8459ab;
 }
 
 #navbarDropdownBlog {
-	color: coral;
+    color: #8459ab;
 }
 
 #dogname {
-	color: coral;
+    color: #8459ab;
 }
 
 #dot {
-	color: coral;
+    color: #8459ab;
+    display: block;
 }
 
 #copyright {
-	color: coral !important;
+    color: #8459ab !important;
 }
 
 #name {
-	color: coral;
+    color: #8459ab;
 }
 
+.card-header {
+    background-color: #f9f5f2;
+}
+
+.card-body {
+    background-color: #f9f5f2;
+}
+
+.card-footer {
+    background-color: #f9f5f2;
+}

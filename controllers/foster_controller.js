@@ -15,7 +15,7 @@ module.exports = function(app) {
     });
 });
     
-    app.get('/api/foster', function(req, res) {
+    app.get('/api/foster/:id', function(req, res) {
         db.Foster.findOne({
             where: {
                 id: req.params.id

@@ -35,9 +35,15 @@ img {
 .gallery__image-hidden {
   display: none;
 }
+
 footer {
   background-color: #5caaef;
   text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
 .copyright {
   margin: 0;
@@ -76,6 +82,11 @@ footer {
 }
 
 #dog_photo {
+  width: 300px;
+  display: inline;
+}
+
+#foster_photo {
   width: 300px;
   display: inline;
 }

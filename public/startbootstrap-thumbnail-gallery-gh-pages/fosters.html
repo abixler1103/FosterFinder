@@ -38,7 +38,7 @@
                         </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./dogs/html" id="navlinks">Dogs</a>
+                    <a class="nav-link" href="./dogs.html" id="navlinks">Dogs</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" href="./fosters/html" id="navlinks">Fosters</a>
@@ -67,66 +67,7 @@
         <main>
 
             <div class="gallery" id="gallery">
-                <div class="gallery__wrapper">
-
-
-
-
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img class="gallery__image" id="foster_photo" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
-
-                    <div class="gallery__item">
-                        <h2 class="gallery__title" id="foster_name">Polly</h2>
-                        <img id="foster_photo" class="gallery__image" src="http://placehold.it/300/000000" />
-                    </div>
+                <div id="galleryItems" class="gallery__wrapper">
 
                 </div>
             </div>
@@ -150,9 +91,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
     <!-- /.container -->
@@ -170,25 +108,30 @@
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $.get("/api/foster", function(data) {
-    $("#foster_name").html(data.foster[0].foster_firstname);
-    $("#foster_photo").attr("src", data.foster[0].foster_photo);
 
-    })
-$("#gallery").on("click", function(e) {
-    e.preventDefault();
-    $.get("/api/foster", function(data) {
-        console.log(data);
-    $("#fosterFirstName").html(data.foster[0].foster_firstname);
-    // $("#fosterImg").attr("src", data.foster[0].foster_photo);
-    $("#fosterEmail").html("Email: " + data.foster[0].dog_email);
-    $("#fosterPhone").html("Phone Number : " + data.foster[0].foster_phone);
-    $("#fosterLocation").html("Location: " + data.foster[0].foster_location);
-    $("#fosterHomeType").html("Home Type: " + data.foster[0].foster_hometype);
-    console.log("2");
-    $("#myModal").modal("toggle");
-});
-});
+$(document).ready(function () {
+            $.get("/api/foster", function (data) {
+                var galleryItemsHtml = "";
+                for (i = 0; i < data.foster.length; i++) {
+                    galleryItemsHtml = galleryItemsHtml + "<div class='gallery__item'><h2 class='gallery__title' id='foster_name'>" + data.foster[i].foster_firstname + "</h2><a class='open-foster' data-toggle='modal' data-id='" + data.foster[i].id + "'><img id='foster_photo' class='gallery__image' src='" + data.foster[i].foster_photo + "' /></a></div>";
+                }
+                $("#galleryItems").html(galleryItemsHtml);
+            });
+        });
+
+        $(document).on("click", ".open-foster", function () {
+            var fosterId = $(this).data('id');
+            console.log(fosterId);
+
+            $.get("/api/foster/" + fosterId, function (data) {
+                $("#fosterFirstName").html(data.foster_firstname);
+                $("fosterImg").attr("src", data.foster_photo);
+                $("#fosterEmail").html("Email: " + data.foster_email);
+                $("#fosterPhone").html("Phone Number: " + data.foster_phone);
+                $("#fosterHomeType").html("Home Type: " + data.foster_hometype);
+                $("#myModal").modal("show");
+            });
+        });
     </script>
 </body>
 

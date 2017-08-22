@@ -6,6 +6,7 @@
 
 body {
     padding-top: 54px;
+    background-color: #dfd0bf;
 }
 
 @media (min-width: 992px) {
@@ -30,4 +31,11 @@ body {
 
 li {
     display: inline;
+}
+
+.fa {
+    padding-top: 15px;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: #8459ab;
 }

@@ -12,44 +12,44 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="../../index.html">Foster Finder</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+        <a class="navbar-brand" href="../index.html" id="name">Foster Finder</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./about.html" id="navlinks">About</a>
+                    <a class="nav-link" href="#" id="navlinks">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html" id="navlinks">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../startbootstrap-thumbnail-gallery-gh-pages/shop.html" id="navlinks">
+                    <a class="nav-link" href="./startbootstrap-thumbnail-gallery-gh-pages/shop.html" id="navlinks">
                             Shop
                         </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../startbootstrap-thumbnail-gallery-gh-pages/dogs.html" id="navlinks">Dogs</a>
+                    <a class="nav-link" href="./startbootstrap-thumbnail-gallery-gh-pages/dogs.html" id="navlinks">
+                            Dogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./services.html" id="navlinks">Stories</a>
+                    <a class="nav-link" href="./startbootstrap-thumbnail-gallery-gh-pages/fosters.html" id="navlinks">Fosters</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="navlinks">Stories</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navlinks">More Info
-                        </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="./ull-width.html">Terms & Conditins</a>
-                        <a class="dropdown-item" href="./sidebar.html">FAQ</a>
-                        <a class="dropdown-item" href="./faq.html">Donate</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html" id="navlinks">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./custom-login-form/index.html" id="navlinks">Login</a>
                 </li>
             </ul>
         </div>
@@ -57,13 +57,13 @@
     <!-- Page Content -->
     <div class="container">
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">About <small>Foster Finder</small></h1>
-        <ol class="breadcrumb">
+        <h1 class="mt-4 mb-3">About Foster Finder</h1>
+        <!--   <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="../../index.html">Home</a>
             </li>
             <li class="breadcrumb-item active">About</li>
-        </ol>
+        </ol> -->
         <!-- Intro Content -->
         <div class="row">
             <div class="col-lg-6">
@@ -71,9 +71,16 @@
             </div>
             <div class="col-lg-6">
                 <h2>How We Started</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                <p>We came together through our love of animals, especially our dogs. Through discovery we found each of us had rescued our furbabies, giving them the second chance at life.</p>
+                <p>Foster Finder is currently based in the North Texas, Dallas, area as an avenue for those interested in fostering to search for foster dogs and more importantly for rescue groups and shelters to search for potential fosters.</p>
+                <ul id="contactLinks" class="list-inline social-buttons">
+                    <li><a href="mailto:fosterfinder@gmail.com" target="_blank"><i class="fa fa-envelope fa-4x"></i></a>
+                    </li>
+                    <li><a href="tel:415-654-4517" target="_blank"><i class="fa fa-phone fa-4x"></i></a>
+                    </li>
+                    <li><a href="https://www.google.com/maps/place/Dedman+Life+Sciences+Building/@32.8457595,-96.7831537,15z/data=!4m5!3m4!1s0x0:0xbfa32e336b3720ec!8m2!3d32.8457595!4d-96.7831537" target="_blank"><i class="fa fa-map-marker fa-4x"></i></a>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- /.row -->
@@ -82,19 +89,21 @@
         <div class="row">
             <div class="col-lg-2 mb-2">
                 <div class="card h-100 text-center">
-                    <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+                    <img class="card-img-top" src="../img/ashley2.jpeg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Ashley Bixler</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Project Manager</h6>
+                        <br>
+                        <br>
+                        <p class="card-text">I love seeing a project through from start to finish, keeping track of deadlines, tasks and jumping into clean up the UX/UI</p>
                     </div>
                     <div class="card-footer">
                         <ul id="aboutLinks" class="list-inline social-buttons">
-                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github"></i></a>
+                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                             </li>
-                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -102,19 +111,20 @@
             </div>
             <div class="col-lg-2 mb-2">
                 <div class="card h-100 text-center">
-                    <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+                    <img class="card-img-top" src="../img/Taylor2.jpeg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Taylor Clark</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Front-end Wizard and Back-end Ninja!</h6>
-                        <p class="card-text"></p>
+                        <h6 class="card-subtitle mb-2 text-muted">Front-end Wizard / Back-end Ninja!</h6>
+                        <br>
+                        <p class="card-text">I enjoy tinkering with code and testing my google-foo in order to celebrate the small victories of working code!</p>
                     </div>
                     <div class="card-footer">
                         <ul class="list-inline social-buttons">
-                            <li><a href="https://www.github.com/tictac0723" target="_blank"><i class="fa fa-github"></i></a>
+                            <li><a href="https://www.github.com/tictac0723" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                             </li>
-                            <li><a href="mailto:taylorclark0723@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <li><a href="mailto:taylorclark0723@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/taylor-a-clark/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com/in/taylor-a-clark/" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -125,16 +135,19 @@
                     <img class="card-img-top" src="http://placehold.it/750x450" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Davin Patel</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                        <h6 class="card-subtitle mb-2 text-muted">API caller</h6>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="card-text">Calling and creating API's is just about as good as my hoops game - I'm the shot caller!</p>
                     </div>
                     <div class="card-footer">
                         <ul class="list-inline social-buttons">
-                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github"></i></a>
+                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                             </li>
-                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -145,16 +158,18 @@
                     <img class="card-img-top" src="http://placehold.it/750x450" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Michael Hill</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Front End Form Builder</h6>
+                        <br>
+                        <br>
+                        <p class="card-text">I enjoy working on code that directly impacts the database and creation of additional pages.</p>
                     </div>
                     <div class="card-footer">
                         <ul class="list-inline social-buttons">
-                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github"></i></a>
+                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                             </li>
-                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -165,16 +180,19 @@
                     <img class="card-img-top" src="http://placehold.it/750x450" alt="">
                     <div class="card-body">
                         <h4 class="card-title">HoaLy Nguyen</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Modal Monster</h6>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="card-text">Popping items is my speciality when creating clean pages to share informatoin to the user.</p>
                     </div>
                     <div class="card-footer">
                         <ul class="list-inline social-buttons">
-                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github"></i></a>
+                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                             </li>
-                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -182,56 +200,34 @@
             </div>
             <div class="col-lg-2 mb-2">
                 <div class="card h-100 text-center">
-                    <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+                    <img class="card-img-top" src="../img/thanks.jpeg" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Team Member</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                        <h4 class="card-title">Special Thanks</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Code Masters</h6>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="card-text">A special thanks to our instructor Steve, our TA Thomas and our coding spouses, David and Brenden</p>
                     </div>
                     <div class="card-footer">
                         <ul class="list-inline social-buttons">
-                            <li><a href="https://www.github.com/abixler1103" target="_blank"><i class="fa fa-github"></i></a>
+                            <li><a href="#"><i class="fa fa-question fa-lg"></i></a>
                             </li>
-                            <li><a href="mailto:ashley.e.bixler@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <li><a href="#"><i class="fa fa-clone fa-lg"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/ashleybixler/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="#"><i class="fa fa-beer fa-lg"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /.row -->
-        <!-- Our Customers -->
-        <!--         <h2>Our Customers</h2>
-        <div class="row">
-            <div class="col-lg-2 col-sm-4 mb-4">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-lg-2 col-sm-4 mb-4">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-lg-2 col-sm-4 mb-4">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-lg-2 col-sm-4 mb-4">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-lg-2 col-sm-4 mb-4">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-lg-2 col-sm-4 mb-4">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </div>
-        </div>
- -->
-        <!-- /.row -->
     </div>
     <!-- /.container -->
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark" id="footer">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; FosterFinder 2017</p>
+            <p class="m-0 text-center text-white" id="copyright">Copyright &copy; FosterFinder 2017</p>
         </div>
         <!-- /.container -->
     </footer>

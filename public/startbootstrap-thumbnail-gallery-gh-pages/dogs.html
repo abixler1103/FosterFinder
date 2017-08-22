@@ -13,15 +13,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom styles for this template -->
+    <link href="./startbootstrap-modern-business-gh-pages/css/modern-business.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="css/dogs.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="../index.html">Foster Finder</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-            aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+        <a class="navbar-brand" href="../index.html" id="name">Foster Finder</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -30,51 +31,37 @@
                     <a class="nav-link" href="../startbootstrap-modern-business-gh-pages/about.html" id="navlinks">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../startbootstrap-modern-business-gh-pages/contact.html" id="navlinks">Contact</a>
+                    <a class="nav-link" href="dogs.html" id="navlinks">Dogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="shop.html" id="navlinks">
-                            Shop
-                        </a>
+                    <a class="nav-link" href="fosters.html" id="navlinks">Fosters</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./dogs.html" id="navlinks">Dogs</a>
+                    <a class="nav-link" href="shop.html" id="navlinks">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./fosters.html" id="navlinks">Fosters</a>
+                  <a class="nav-link" href="#" id="navlinks">Stories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="navlinks">Stories</a>
+                    <a class="nav-link" href="../startbootstrap-modern-business-gh-pages/faq.html" id="navlinks">FAQ</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                        id="navlinks">More Info
-                        </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="../startbootstrap-modern-business-gh-pages/ull-width.html">Terms & Conditions</a>
-                        <a class="dropdown-item" href="../startbootstrap-modern-business-gh-pages/sidebar.html">FAQ</a>
-                        <a class="dropdown-item" href="../startbootstrap-modern-business-gh-pages/faq.html">Donate</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="../custom-login-form/index.html" id="navlinks">Login</a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- Page Content -->
     <div class="container">
-
         <header>
             <h1>Foster One of These Fur-Babies!</h1>
         </header>
-
         <main>
-
             <div class="gallery" id="gallery">
                 <div id="galleryItems" class="gallery__wrapper">
-
                 </div>
             </div>
         </main>
-
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -89,59 +76,55 @@
                         <p id="dogAge"></p>
                     </div>
                     <button type="button" class="btn btn-default" id="fosterButton" onclick="window.open('email.html')">
-                                <span class="glyphicon glyphicon-heart-empty"></span> I Want To Foster!
-                              </button>
+                        <span class="glyphicon glyphicon-heart-empty"></span> I Want To Foster!
+                    </button>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
     </div>
     </div>
     <!-- /.container -->
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark" id="footer">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Foster Finder 2017</p>
+            <p class="m-0 text-center text-white" id="copyright">Copyright &copy; FosterFinder 2017</p>
         </div>
         <!-- /.container -->
     </footer>
     <!-- Bootstrap core JavaScript -->
-
     <!-- <script src="js/dogs.js"></script> -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $.get("/api/dogs", function (data) {
-                var galleryItemsHtml = "";
-                for (i = 0; i < data.dogs.length; i++) {
-                    galleryItemsHtml = galleryItemsHtml + "<div class='gallery__item'><h2 class='gallery__title' id='dog_name'>" + data.dogs[i].dog_name + "</h2><a class='open-dog' data-toggle='modal' data-id='" + data.dogs[i].id + "'><img id='dog_photo' class='gallery__image' src='" + data.dogs[i].dog_photo + "' /></a></div>";
-                }
-                $("#galleryItems").html(galleryItemsHtml);
-            });
+    $(document).ready(function() {
+        $.get("/api/dogs", function(data) {
+            var galleryItemsHtml = "";
+            for (i = 0; i < data.dogs.length; i++) {
+                galleryItemsHtml = galleryItemsHtml + "<div class='gallery__item'><h2 class='gallery__title' id='dog_name'>" + data.dogs[i].dog_name + "</h2><a class='open-dog' data-toggle='modal' data-id='" + data.dogs[i].id + "'><img id='dog_photo' class='gallery__image' src='" + data.dogs[i].dog_photo + "' /></a></div>";
+            }
+            $("#galleryItems").html(galleryItemsHtml);
         });
+    });
 
-        $(document).on("click", ".open-dog", function () {
-            var dogId = $(this).data('id');
-            console.log(dogId);
+    $(document).on("click", ".open-dog", function() {
+        var dogId = $(this).data('id');
+        console.log(dogId);
 
-            $.get("/api/dogs/" + dogId, function (data) {
-                $("#dogName").html(data.dog_name);
-                $("#dogImg").attr("src", data.dog_photo);
-                $("#dogDescription").html("Description: " + data.dog_description);
-                $("#dogLocation").html("Location: " + data.dog_location);
-                $("#dogBreed").html("Breed: " + data.dog_breed);
-                $("#dogAge").html("Age: " + data.dog_age);
-                console.log("2");
-                $("#myModal").modal("show");
-            });
+        $.get("/api/dogs/" + dogId, function(data) {
+            $("#dogName").html(data.dog_name);
+            $("#dogImg").attr("src", data.dog_photo);
+            $("#dogDescription").html("Description: " + data.dog_description);
+            $("#dogLocation").html("Location: " + data.dog_location);
+            $("#dogBreed").html("Breed: " + data.dog_breed);
+            $("#dogAge").html("Age: " + data.dog_age);
+            console.log("2");
+            $("#myModal").modal("show");
         });
+    });
     </script>
 </body>
 
